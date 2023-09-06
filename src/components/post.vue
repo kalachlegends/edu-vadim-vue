@@ -2,6 +2,9 @@
   <div class="post">
     <div class="post__title">{{ title }}</div>
     <div class="post__description">{{ discription }}</div>
+    <div v-if="img" class="post__img">
+      <img :src="img">
+    </div>
   </div>
 </template>
 
@@ -10,10 +13,8 @@ export default {
   props: {
     title: String,
     discription: String,
-  },
-  setup() {
-    return {};
-  },
+    img: String
+},
 };
 </script>
 
@@ -29,6 +30,10 @@ export default {
   &__description {
     font-weight: normal;
     font-size: 15px;
+  }
+  &__img {
+    width: 100px;
+    height: 100px;
   }
 }
 </style>

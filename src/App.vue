@@ -2,17 +2,18 @@
 import postVue from "./components/post.vue";
 
 export default {
-  data: () => ({ count: 0 }),
+  data: () => ({ count: 0, imgUrl: "/src/assets/vue.svg"}),
   components: { postVue },
   methods: {
     handleCLick: function (e) {
       console.log(this);
     },
     handleCLickTwo: function (e) {
-      console.log(this.count++);
+      console.log(this.count);
+      this.count++;
     },
-  },
-};
+  }
+}
 </script>
 
 <template>
@@ -20,7 +21,7 @@ export default {
   <div>Я появился</div>
   <div @click="handleCLick">Я event handleCLick</div>
   <div @click="handleCLickTwo">Я event handleCLickTwo</div>
-  <!-- HINTS for 1: <img src="/vite.svg" /> -->
+  <postVue :img="imgUrl" />
 </template>
 
 <style scoped></style>
